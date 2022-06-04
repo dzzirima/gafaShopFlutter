@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:amazon_clone/common/Widgets/custom_button.dart';
 import 'package:amazon_clone/common/Widgets/custom_textfield.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:flutter/material.dart';
@@ -48,13 +49,16 @@ class _AuthScreenState extends State<AuthScreen> {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
               ),
               ListTile(
+                tileColor: _auth == Auth.signup
+                    ? GlobalVariables.backgroundColor
+                    : GlobalVariables.greyBackgroundCOlor,
                 title: Text(
                   'Create Account',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 leading: Radio(
                   activeColor: GlobalVariables.secondaryColor,
-                  value: Auth.signin,
+                  value: Auth.signup,
                   groupValue: _auth,
                   onChanged: (Auth? val) {
                     setState(() {
@@ -84,19 +88,32 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomeTextField(
                           controller: _passwordController,
                           hintText: 'Password',
+                        ),
+                        //passing it as const makes user it does not rebuild
+                        //sized box coz its always const  not body which can never be const
+
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        CustomButton(
+                          text: 'Sign Up',
+                          onTap: () {},
                         )
                       ],
                     ),
                   ),
                 ),
               ListTile(
+                tileColor: _auth == Auth.signin
+                    ? GlobalVariables.backgroundColor
+                    : GlobalVariables.greyBackgroundCOlor,
                 title: Text(
                   'Sign-In.',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 leading: Radio(
                   activeColor: GlobalVariables.secondaryColor,
-                  value: Auth.signup,
+                  value: Auth.signin,
                   groupValue: _auth,
                   onChanged: (Auth? val) {
                     setState(() {
@@ -105,6 +122,38 @@ class _AuthScreenState extends State<AuthScreen> {
                   },
                 ),
               ),
+              if (_auth == Auth.signin)
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  color: GlobalVariables.backgroundColor,
+                  child: Form(
+                    key: _signUpFormKey,
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        CustomeTextField(
+                          controller: _emailController,
+                          hintText: "Email",
+                        ),
+                        const SizedBox(height: 10),
+                        CustomeTextField(
+                          controller: _passwordController,
+                          hintText: 'Password',
+                        ),
+                        //passing it as const makes user it does not rebuild
+                        //sized box coz its always const  not body which can never be const
+
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        CustomButton(
+                          text: 'Sign Up',
+                          onTap: () {},
+                        )
+                      ],
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
