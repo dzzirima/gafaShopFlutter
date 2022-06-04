@@ -16,37 +16,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Gafa Shop',
-      theme: ThemeData(
-        scaffoldBackgroundColor: GlobalVariables.backgroundColor,
-        appBarTheme: AppBarTheme(
-            elevation: 0,
-            iconTheme: IconThemeData(
-              color: Colors.black,
-            )),
-      ),
-      //whenever an new route is created we pass in the settings
-      onGenerateRoute: (settings) => generateRoute(settings),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Gafa Shop"),
+        title: 'Gafa Shop',
+        theme: ThemeData(
+          scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+          appBarTheme: const AppBarTheme(
+              elevation: 0,
+              iconTheme: IconThemeData(
+                color: Colors.black,
+              )),
         ),
-        body: Column(
-          children: [
-            const Center(
-              child: Text('This is the demo page'),
-            ),
-            Builder(builder: (context) {
-              return ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, AuthScreen.routeName);
-                },
-                child: const Text("Next Page"),
-              );
-            })
-          ],
-        ),
-      ),
-    );
+        //whenever an new route is created we pass in the settings
+        onGenerateRoute: (settings) => generateRoute(settings),
+        home: const AuthScreen());
   }
 }
