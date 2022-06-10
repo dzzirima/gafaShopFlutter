@@ -46,6 +46,14 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
+  void signInUser() {
+    authService.signInUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +118,9 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomButton(
                           text: 'Sign Up',
                           onTap: () {
-                            signUpUser();
+                            if (_signUpFormKey.currentState!.validate()) {
+                              signUpUser();
+                            }
                           },
                         )
                       ],
@@ -141,7 +151,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   padding: const EdgeInsets.all(8.0),
                   color: GlobalVariables.backgroundColor,
                   child: Form(
-                    key: _signUpFormKey,
+                    key: _signInFormKey,
                     child: Column(
                       children: [
                         const SizedBox(height: 10),
@@ -161,10 +171,10 @@ class _AuthScreenState extends State<AuthScreen> {
                           height: 10,
                         ),
                         CustomButton(
-                          text: 'Sign Up',
+                          text: 'Sign In',
                           onTap: () {
-                            if (_signUpFormKey.currentState!.validate()) {
-                              signUpUser();
+                            if (_signInFormKey.currentState!.validate()) {
+                              signInUser();
                             }
                           },
                         )
