@@ -38,7 +38,6 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void signUpUser() {
-    print("hello david");
     authService.signUpUser(
       context: context,
       email: _emailController.text,
