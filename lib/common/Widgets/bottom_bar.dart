@@ -44,7 +44,6 @@ class _BottomBarState extends State<BottomBar> {
         unselectedItemColor: GlobalVariables.unselectedNavBarColor,
         backgroundColor: GlobalVariables.backgroundColor,
         iconSize: 28,
-
         //called whenever there is a tap in one of the icons
         onTap: updatePage,
         items: [
