@@ -125,7 +125,6 @@ class AuthService {
           'x-auth-token': token! //means it cant be  null
         },
       );
-
       var response = jsonDecode(tokenRes.body);
 
       if (response == true) {
