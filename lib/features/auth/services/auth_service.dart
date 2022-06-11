@@ -87,13 +87,16 @@ class AuthService {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           //if we are outside context listen is always false
           // ignore: use_build_context_synchronously
-          Provider.of<UserProvider>(context, listen: false).setUser(res.body);
+          String user = res.body;
+          print("here is my user " + user);
+          Provider.of<UserProvider>(context, listen: false).setUser(user);
           await prefs.setString(
             'x-auth-token',
             jsonDecode(res.body)['token'],
           );
 
-          Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (route) => false);
+          Navigator.pushNamedAndRemoveUntil(
+              context, HomeScreen.routeName, (route) => false);
         },
       );
     } catch (e) {
