@@ -76,8 +76,6 @@ class AuthService {
         },
       );
 
-      print(res.body);
-
       //using customised http handling stuff
       httpErrorHandle(
         response: res,
@@ -88,17 +86,61 @@ class AuthService {
           //if we are outside context listen is always false
           // ignore: use_build_context_synchronously
           String user = res.body;
-          print("here is my user " + user);
+
+          // ignore: use_build_context_synchronously
           Provider.of<UserProvider>(context, listen: false).setUser(user);
           await prefs.setString(
             'x-auth-token',
             jsonDecode(res.body)['token'],
           );
 
+          // ignore: use_build_context_synchronously
           Navigator.pushNamedAndRemoveUntil(
               context, HomeScreen.routeName, (route) => false);
         },
       );
+    } catch (e) {
+      //error when creating a user
+      showSnackBar(
+        context,
+        e.toString(),
+      );
+    }
+  }
+
+//get User Data
+  void getUserData({
+    required BuildContext context,
+  }) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? token = prefs.getString('x-auth-token');
+      if (token == null) {
+        prefs.setString('x-auth-token', '');
+      }
+      var tokenRes = await http.post(
+        Uri.parse('$url/tokenIsValid'),
+        headers: <String, String>{
+          'Content-Type': 'application/json;charset=UTF-8',
+          'x-auth-token': token! //means it cant be  null
+        },
+      );
+
+      var response = jsonDecode(tokenRes.body);
+
+      if (response == true) {
+        //get the user data
+        http.Response userRes = await http.get(
+          Uri.parse('$url/'),
+          headers: <String, String>{
+            'Content-Type': 'application/json;charset=UTF-8',
+            'x-auth-token': token
+          },
+        );
+
+        var userProvider = Provider.of<UserProvider>(context, listen: false);
+        userProvider.setUser(userRes.body);
+      }
     } catch (e) {
       //error when creating a user
       showSnackBar(

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:amazon_clone/model/user.dart';
+
 import 'package:flutter/cupertino.dart';
 
 class UserProvider extends ChangeNotifier {
