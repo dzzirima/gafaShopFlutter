@@ -1,5 +1,6 @@
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/features/accounts/screens/account_screen.dart';
+import 'package:amazon_clone/features/admin/admin_screen.dart';
 import 'package:amazon_clone/features/home/screens/home_screen.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,6 +27,7 @@ class _BottomBarState extends State<BottomBar> {
     const Center(
       child: Text("Cart Page"),
     ),
+    const AdminScreen()
   ];
   void updatePage(int page) {
     setState(() {
@@ -103,6 +105,27 @@ class _BottomBarState extends State<BottomBar> {
                 badgeContent: const Text("2"),
                 badgeColor: Colors.white,
                 child: const Icon(Icons.shopping_cart_outlined),
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "Admin",
+            icon: Container(
+              width: bottomBarWith,
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: _page == 3
+                        ? GlobalVariables.selectedNavBarColor
+                        : GlobalVariables.backgroundColor,
+                    width: bottomBarBorderWidth,
+                  ),
+                ),
+              ),
+              child: Badge(
+                elevation: 0,
+                badgeColor: Colors.white,
+                child: const Icon(Icons.security_outlined),
               ),
             ),
           ),
