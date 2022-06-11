@@ -1,6 +1,7 @@
 //connection to backend is handled in here
 import 'dart:convert';
 
+import 'package:amazon_clone/common/Widgets/bottom_bar.dart';
 import 'package:amazon_clone/constants/error_handling.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/constants/utils.dart';
@@ -96,7 +97,7 @@ class AuthService {
 
           // ignore: use_build_context_synchronously
           Navigator.pushNamedAndRemoveUntil(
-              context, HomeScreen.routeName, (route) => false);
+              context, BottomBar.routeName, (route) => false);
         },
       );
     } catch (e) {
@@ -137,6 +138,7 @@ class AuthService {
           },
         );
 
+        // ignore: use_build_context_synchronously
         var userProvider = Provider.of<UserProvider>(context, listen: false);
         userProvider.setUser(userRes.body);
       }

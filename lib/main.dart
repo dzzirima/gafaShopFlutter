@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:amazon_clone/common/Widgets/bottom_bar.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
 import 'package:amazon_clone/features/auth/services/auth_service.dart';
@@ -47,8 +48,6 @@ class _MyAppState extends State<MyApp> {
         ),
         //whenever an new route is created we pass in the settings
         onGenerateRoute: (settings) => generateRoute(settings),
-        home: Provider.of<UserProvider>(context).user.isNotEmpty
-            ? const HomeScreen()
-            : const AuthScreen());
+        home: true ? const BottomBar() : const AuthScreen());
   }
 }
