@@ -1,6 +1,6 @@
-import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/features/accounts/widgets/below_app_bar.dart';
-import 'package:amazon_clone/features/accounts/widgets/top_buttons.dart';
+import 'package:gafashop/constants/global_variables.dart';
+import 'package:gafashop/features/accounts/widgets/below_app_bar.dart';
+import 'package:gafashop/features/accounts/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

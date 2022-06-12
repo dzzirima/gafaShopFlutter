@@ -1,4 +1,4 @@
-# amazon_clone
+# gafashop
 
 A new Flutter project.
 

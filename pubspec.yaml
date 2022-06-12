@@ -1,4 +1,4 @@
-name: amazon_clone
+name: gafashop
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^2.0.15
   badges: ^2.0.3
   dotted_border: ^2.0.0+2
+  file_picker: ^3.0.4
 
 dev_dependencies:
   flutter_test:

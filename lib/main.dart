@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'package:amazon_clone/common/Widgets/bottom_bar.dart';
-import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
-import 'package:amazon_clone/features/auth/services/auth_service.dart';
-import 'package:amazon_clone/features/home/screens/home_screen.dart';
-import 'package:amazon_clone/providers/user_provider.dart';
-import 'package:amazon_clone/router.dart';
+import 'package:gafashop/common/Widgets/bottom_bar.dart';
+import 'package:gafashop/constants/global_variables.dart';
+import 'package:gafashop/features/auth/screens/auth_screen.dart';
+import 'package:gafashop/features/auth/services/auth_service.dart';
+import 'package:gafashop/features/home/screens/home_screen.dart';
+import 'package:gafashop/providers/user_provider.dart';
+import 'package:gafashop/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

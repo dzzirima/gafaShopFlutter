@@ -1,13 +1,13 @@
 //connection to backend is handled in here
 import 'dart:convert';
 
-import 'package:amazon_clone/common/Widgets/bottom_bar.dart';
-import 'package:amazon_clone/constants/error_handling.dart';
-import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/constants/utils.dart';
-import 'package:amazon_clone/features/home/screens/home_screen.dart';
-import 'package:amazon_clone/model/user.dart';
-import 'package:amazon_clone/providers/user_provider.dart';
+import 'package:gafashop/common/Widgets/bottom_bar.dart';
+import 'package:gafashop/constants/error_handling.dart';
+import 'package:gafashop/constants/global_variables.dart';
+import 'package:gafashop/constants/utils.dart';
+import 'package:gafashop/features/home/screens/home_screen.dart';
+import 'package:gafashop/model/user.dart';
+import 'package:gafashop/providers/user_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';

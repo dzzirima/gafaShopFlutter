@@ -1,4 +1,4 @@
-import 'package:amazon_clone/features/admin/add_product.dart';
+import 'package:gafashop/features/admin/add_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

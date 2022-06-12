@@ -1,4 +1,4 @@
-import 'package:amazon_clone/features/admin/post_screen.dart';
+import 'package:gafashop/features/admin/post_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

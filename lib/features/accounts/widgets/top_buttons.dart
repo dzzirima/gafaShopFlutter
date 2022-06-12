@@ -1,4 +1,4 @@
-import 'package:amazon_clone/features/accounts/widgets/account_button.dart';
+import 'package:gafashop/features/accounts/widgets/account_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -30,7 +30,6 @@ class _TopButtonsState extends State<TopButtons> {
             AccountButton(text: "LogOut", onTap: () {}),
           ],
         ),
-        
       ],
     );
   }

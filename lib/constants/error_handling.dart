@@ -1,7 +1,7 @@
 //this file is for handling all the errors that may occur during the
 import 'dart:convert';
 
-import 'package:amazon_clone/constants/utils.dart';
+import 'package:gafashop/constants/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
