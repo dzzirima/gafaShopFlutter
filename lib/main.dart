@@ -41,10 +41,11 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           scaffoldBackgroundColor: GlobalVariables.backgroundColor,
           appBarTheme: const AppBarTheme(
-              elevation: 0,
-              iconTheme: IconThemeData(
-                color: Colors.black,
-              )),
+            elevation: 0,
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            ),
+          ),
         ),
         //whenever an new route is created we pass in the settings
         onGenerateRoute: (settings) => generateRoute(settings),
